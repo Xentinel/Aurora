@@ -1,0 +1,7 @@
+CREATE TABLE palabra (
+  idPalabra INTEGER PRIMARY KEY UNIQUE AUTO_INCREMENT,
+  imagen VARCHAR(90),
+  valor VARCHAR(15) UNIQUE,
+  idTipo INTEGER REFERENCES tipo(idTipo),
+  idIdioma INTEGER REFERENCES idioma(idIdioma)
+);

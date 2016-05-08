@@ -17,3 +17,18 @@ CREATE TABLE palabra (
   valor VARCHAR(15) UNIQUE
 
 );
+
+CREATE TABLE traduccion (
+  idPalabra INTEGER REFERENCES palabra(idPalabra),
+  idTraduccion INTEGER REFERENCES palabra(idPalabra)
+);
+
+CREATE TABLE usos (
+  uso VARCHAR(30),
+  idPalabra INTEGER REFERENCES palabra(idPalabra)
+);
+
+CREATE TABLE audio (
+  audio VARCHAR(90),
+  idPalabra INTEGER REFERENCES palabra(idPalabra)
+);
